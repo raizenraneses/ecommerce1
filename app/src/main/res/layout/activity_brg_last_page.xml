@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFFDF6"
+    android:gravity="center">
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/logo"
+        android:contentDescription="Brg Logo" />
+
+    <!-- Thank You Message -->
+    <TextView
+        android:id="@+id/thankYouMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thank you for purchasing!"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#D9534F"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Continue to Shopping Button -->
+    <Button
+        android:id="@+id/continueShoppingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:textStyle="bold"
+        android:backgroundTint="#264D75"
+        android:textColor="#FFFFFF"
+        android:text="Continue to shopping"
+        android:textSize="20sp"
+        android:elevation="4dp" />
+</LinearLayout>

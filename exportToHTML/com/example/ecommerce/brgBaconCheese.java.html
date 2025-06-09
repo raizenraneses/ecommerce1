@@ -1,0 +1,135 @@
+<html>
+<head>
+<title>brgBaconCheese.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #2aacb8;}
+.s5 { color: #6aab73;}
+.ln { color: #4b5059; font-weight: normal; font-style: normal; }
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+brgBaconCheese.java</font>
+</center></td></tr></table>
+<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">ecommerce</span><span class="s2">;</span>
+<a name="l2"><span class="ln">2    </span></a>
+<a name="l3"><span class="ln">3    </span></a><span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">content</span><span class="s2">.</span><span class="s1">Intent</span><span class="s2">;</span>
+<a name="l4"><span class="ln">4    </span></a><span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Bundle</span><span class="s2">;</span>
+<a name="l5"><span class="ln">5    </span></a><span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">Button</span><span class="s2">;</span>
+<a name="l6"><span class="ln">6    </span></a><span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">TextView</span><span class="s2">;</span>
+<a name="l7"><span class="ln">7    </span></a><span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">Toast</span><span class="s2">;</span>
+<a name="l8"><span class="ln">8    </span></a><span class="s0">import </span><span class="s1">androidx</span><span class="s2">.</span><span class="s1">appcompat</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">AppCompatActivity</span><span class="s2">;</span>
+<a name="l9"><span class="ln">9    </span></a>
+<a name="l10"><span class="ln">10   </span></a><span class="s0">public class </span><span class="s1">brgBaconCheese </span><span class="s0">extends </span><span class="s1">AppCompatActivity </span><span class="s2">{</span>
+<a name="l11"><span class="ln">11   </span></a>
+<a name="l12"><span class="ln">12   </span></a>    <span class="s3">// Constants</span>
+<a name="l13"><span class="ln">13   </span></a>    <span class="s0">private static final int </span><span class="s1">MIN_QUANTITY </span><span class="s2">= </span><span class="s4">1</span><span class="s2">;</span>
+<a name="l14"><span class="ln">14   </span></a>    <span class="s0">private static final int </span><span class="s1">MAX_QUANTITY </span><span class="s2">= </span><span class="s4">20</span><span class="s2">;</span>
+<a name="l15"><span class="ln">15   </span></a>    <span class="s0">private static final int </span><span class="s1">PRODUCT_PRICE </span><span class="s2">= </span><span class="s4">300</span><span class="s2">;</span>
+<a name="l16"><span class="ln">16   </span></a>    <span class="s0">private static final int </span><span class="s1">DELIVERY_FEE </span><span class="s2">= </span><span class="s4">59</span><span class="s2">;</span>
+<a name="l17"><span class="ln">17   </span></a>
+<a name="l18"><span class="ln">18   </span></a>    <span class="s3">// Views</span>
+<a name="l19"><span class="ln">19   </span></a>    <span class="s0">private </span><span class="s1">TextView quantityTextView</span><span class="s2">;</span>
+<a name="l20"><span class="ln">20   </span></a>    <span class="s0">private </span><span class="s1">TextView deliveryFeeTextView</span><span class="s2">;</span>
+<a name="l21"><span class="ln">21   </span></a>    <span class="s0">private </span><span class="s1">TextView totalPriceTextView</span><span class="s2">;</span>
+<a name="l22"><span class="ln">22   </span></a>    <span class="s0">private </span><span class="s1">Button decreaseButton</span><span class="s2">;</span>
+<a name="l23"><span class="ln">23   </span></a>    <span class="s0">private </span><span class="s1">Button increaseButton</span><span class="s2">;</span>
+<a name="l24"><span class="ln">24   </span></a>    <span class="s0">private </span><span class="s1">TextView cancelButton</span><span class="s2">;</span>
+<a name="l25"><span class="ln">25   </span></a>    <span class="s0">private </span><span class="s1">TextView placeOrderButton</span><span class="s2">;</span>
+<a name="l26"><span class="ln">26   </span></a>
+<a name="l27"><span class="ln">27   </span></a>    <span class="s3">// Variables</span>
+<a name="l28"><span class="ln">28   </span></a>    <span class="s0">private int </span><span class="s1">quantity </span><span class="s2">= </span><span class="s4">1</span><span class="s2">;</span>
+<a name="l29"><span class="ln">29   </span></a>
+<a name="l30"><span class="ln">30   </span></a>    <span class="s1">@Override</span>
+<a name="l31"><span class="ln">31   </span></a>    <span class="s0">protected void </span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">Bundle savedInstanceState</span><span class="s2">) {</span>
+<a name="l32"><span class="ln">32   </span></a>        <span class="s0">super</span><span class="s2">.</span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState</span><span class="s2">);</span>
+<a name="l33"><span class="ln">33   </span></a>        <span class="s1">setContentView</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">activity_brg_bacon_cheese</span><span class="s2">);</span>
+<a name="l34"><span class="ln">34   </span></a>
+<a name="l35"><span class="ln">35   </span></a>        <span class="s3">// Initialize views</span>
+<a name="l36"><span class="ln">36   </span></a>        <span class="s1">quantityTextView </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">quantityTextView</span><span class="s2">);</span>
+<a name="l37"><span class="ln">37   </span></a>        <span class="s1">deliveryFeeTextView </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">deliveryFeeTextView</span><span class="s2">);</span>
+<a name="l38"><span class="ln">38   </span></a>        <span class="s1">totalPriceTextView </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">totalPriceTextView</span><span class="s2">);</span>
+<a name="l39"><span class="ln">39   </span></a>        <span class="s1">decreaseButton </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">decreaseButton</span><span class="s2">);</span>
+<a name="l40"><span class="ln">40   </span></a>        <span class="s1">increaseButton </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">increaseButton</span><span class="s2">);</span>
+<a name="l41"><span class="ln">41   </span></a>        <span class="s1">cancelButton </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">cancelButton</span><span class="s2">);</span>
+<a name="l42"><span class="ln">42   </span></a>        <span class="s1">placeOrderButton </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">placeOrderButton</span><span class="s2">);</span>
+<a name="l43"><span class="ln">43   </span></a>
+<a name="l44"><span class="ln">44   </span></a>        <span class="s3">// Set initial values</span>
+<a name="l45"><span class="ln">45   </span></a>        <span class="s1">updateQuantityDisplay</span><span class="s2">();</span>
+<a name="l46"><span class="ln">46   </span></a>        <span class="s1">updatePriceDisplay</span><span class="s2">();</span>
+<a name="l47"><span class="ln">47   </span></a>
+<a name="l48"><span class="ln">48   </span></a>        <span class="s3">// Set click listeners</span>
+<a name="l49"><span class="ln">49   </span></a>        <span class="s1">decreaseButton</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s1">v -&gt; decreaseQuantity</span><span class="s2">());</span>
+<a name="l50"><span class="ln">50   </span></a>
+<a name="l51"><span class="ln">51   </span></a>        <span class="s1">increaseButton</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s1">v -&gt; increaseQuantity</span><span class="s2">());</span>
+<a name="l52"><span class="ln">52   </span></a>
+<a name="l53"><span class="ln">53   </span></a>        <span class="s1">cancelButton</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s1">v -&gt; </span><span class="s2">{</span>
+<a name="l54"><span class="ln">54   </span></a>            <span class="s1">Toast</span><span class="s2">.</span><span class="s1">makeText</span><span class="s2">(</span><span class="s1">brgBaconCheese</span><span class="s2">.</span><span class="s0">this</span><span class="s2">, </span><span class="s5">&quot;Order cancelled&quot;</span><span class="s2">, </span><span class="s1">Toast</span><span class="s2">.</span><span class="s1">LENGTH_SHORT</span><span class="s2">).</span><span class="s1">show</span><span class="s2">();</span>
+<a name="l55"><span class="ln">55   </span></a>            <span class="s1">finish</span><span class="s2">();</span>
+<a name="l56"><span class="ln">56   </span></a>        <span class="s2">});</span>
+<a name="l57"><span class="ln">57   </span></a>
+<a name="l58"><span class="ln">58   </span></a>        <span class="s1">placeOrderButton</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s1">v -&gt; placeOrder</span><span class="s2">());</span>
+<a name="l59"><span class="ln">59   </span></a>    <span class="s2">}</span>
+<a name="l60"><span class="ln">60   </span></a>
+<a name="l61"><span class="ln">61   </span></a>    <span class="s0">private void </span><span class="s1">decreaseQuantity</span><span class="s2">() {</span>
+<a name="l62"><span class="ln">62   </span></a>        <span class="s0">if </span><span class="s2">(</span><span class="s1">quantity </span><span class="s2">&gt; </span><span class="s1">MIN_QUANTITY</span><span class="s2">) {</span>
+<a name="l63"><span class="ln">63   </span></a>            <span class="s1">quantity</span><span class="s2">--;</span>
+<a name="l64"><span class="ln">64   </span></a>            <span class="s1">updateQuantityDisplay</span><span class="s2">();</span>
+<a name="l65"><span class="ln">65   </span></a>            <span class="s1">updatePriceDisplay</span><span class="s2">();</span>
+<a name="l66"><span class="ln">66   </span></a>        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+<a name="l67"><span class="ln">67   </span></a>            <span class="s1">Toast</span><span class="s2">.</span><span class="s1">makeText</span><span class="s2">(</span><span class="s0">this</span><span class="s2">, </span><span class="s5">&quot;Minimum quantity reached&quot;</span><span class="s2">, </span><span class="s1">Toast</span><span class="s2">.</span><span class="s1">LENGTH_SHORT</span><span class="s2">).</span><span class="s1">show</span><span class="s2">();</span>
+<a name="l68"><span class="ln">68   </span></a>        <span class="s2">}</span>
+<a name="l69"><span class="ln">69   </span></a>    <span class="s2">}</span>
+<a name="l70"><span class="ln">70   </span></a>
+<a name="l71"><span class="ln">71   </span></a>    <span class="s0">private void </span><span class="s1">increaseQuantity</span><span class="s2">() {</span>
+<a name="l72"><span class="ln">72   </span></a>        <span class="s0">if </span><span class="s2">(</span><span class="s1">quantity </span><span class="s2">&lt; </span><span class="s1">MAX_QUANTITY</span><span class="s2">) {</span>
+<a name="l73"><span class="ln">73   </span></a>            <span class="s1">quantity</span><span class="s2">++;</span>
+<a name="l74"><span class="ln">74   </span></a>            <span class="s1">updateQuantityDisplay</span><span class="s2">();</span>
+<a name="l75"><span class="ln">75   </span></a>            <span class="s1">updatePriceDisplay</span><span class="s2">();</span>
+<a name="l76"><span class="ln">76   </span></a>        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+<a name="l77"><span class="ln">77   </span></a>            <span class="s1">Toast</span><span class="s2">.</span><span class="s1">makeText</span><span class="s2">(</span><span class="s0">this</span><span class="s2">, </span><span class="s5">&quot;Maximum quantity reached&quot;</span><span class="s2">, </span><span class="s1">Toast</span><span class="s2">.</span><span class="s1">LENGTH_SHORT</span><span class="s2">).</span><span class="s1">show</span><span class="s2">();</span>
+<a name="l78"><span class="ln">78   </span></a>        <span class="s2">}</span>
+<a name="l79"><span class="ln">79   </span></a>    <span class="s2">}</span>
+<a name="l80"><span class="ln">80   </span></a>
+<a name="l81"><span class="ln">81   </span></a>    <span class="s0">private void </span><span class="s1">updateQuantityDisplay</span><span class="s2">() {</span>
+<a name="l82"><span class="ln">82   </span></a>        <span class="s1">quantityTextView</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">String</span><span class="s2">.</span><span class="s1">valueOf</span><span class="s2">(</span><span class="s1">quantity</span><span class="s2">));</span>
+<a name="l83"><span class="ln">83   </span></a>    <span class="s2">}</span>
+<a name="l84"><span class="ln">84   </span></a>
+<a name="l85"><span class="ln">85   </span></a>    <span class="s0">private void </span><span class="s1">updatePriceDisplay</span><span class="s2">() {</span>
+<a name="l86"><span class="ln">86   </span></a>        <span class="s0">int </span><span class="s1">total </span><span class="s2">= </span><span class="s1">calculateTotalPrice</span><span class="s2">();</span>
+<a name="l87"><span class="ln">87   </span></a>        <span class="s1">deliveryFeeTextView</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">String</span><span class="s2">.</span><span class="s1">format</span><span class="s2">(</span><span class="s5">&quot;P%d&quot;</span><span class="s2">, </span><span class="s1">DELIVERY_FEE</span><span class="s2">));</span>
+<a name="l88"><span class="ln">88   </span></a>        <span class="s1">totalPriceTextView</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">String</span><span class="s2">.</span><span class="s1">format</span><span class="s2">(</span><span class="s5">&quot;P%d&quot;</span><span class="s2">, </span><span class="s1">total</span><span class="s2">));</span>
+<a name="l89"><span class="ln">89   </span></a>    <span class="s2">}</span>
+<a name="l90"><span class="ln">90   </span></a>
+<a name="l91"><span class="ln">91   </span></a>    <span class="s0">private void </span><span class="s1">placeOrder</span><span class="s2">() {</span>
+<a name="l92"><span class="ln">92   </span></a>        <span class="s1">Intent receiptIntent </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Intent</span><span class="s2">(</span><span class="s1">brgBaconCheese</span><span class="s2">.</span><span class="s0">this</span><span class="s2">, <a href="receiptFile.java.html">receiptFile</a>.</span><span class="s0">class</span><span class="s2">);</span>
+<a name="l93"><span class="ln">93   </span></a>
+<a name="l94"><span class="ln">94   </span></a>        <span class="s3">// Pass all necessary data to receipt</span>
+<a name="l95"><span class="ln">95   </span></a>        <span class="s1">receiptIntent</span><span class="s2">.</span><span class="s1">putExtra</span><span class="s2">(</span><span class="s5">&quot;productName&quot;</span><span class="s2">, </span><span class="s5">&quot;Bacon Cheese Burger&quot;</span><span class="s2">);</span>
+<a name="l96"><span class="ln">96   </span></a>        <span class="s1">receiptIntent</span><span class="s2">.</span><span class="s1">putExtra</span><span class="s2">(</span><span class="s5">&quot;productDescription&quot;</span><span class="s2">, </span><span class="s5">&quot;Smoky BBQ sauce, Crispy Bacon&quot;</span><span class="s2">);</span>
+<a name="l97"><span class="ln">97   </span></a>        <span class="s1">receiptIntent</span><span class="s2">.</span><span class="s1">putExtra</span><span class="s2">(</span><span class="s5">&quot;quantity&quot;</span><span class="s2">, </span><span class="s1">quantity</span><span class="s2">);</span>
+<a name="l98"><span class="ln">98   </span></a>        <span class="s1">receiptIntent</span><span class="s2">.</span><span class="s1">putExtra</span><span class="s2">(</span><span class="s5">&quot;productPrice&quot;</span><span class="s2">, </span><span class="s1">PRODUCT_PRICE</span><span class="s2">);</span>
+<a name="l99"><span class="ln">99   </span></a>        <span class="s1">receiptIntent</span><span class="s2">.</span><span class="s1">putExtra</span><span class="s2">(</span><span class="s5">&quot;deliveryFee&quot;</span><span class="s2">, </span><span class="s1">DELIVERY_FEE</span><span class="s2">);</span>
+<a name="l100"><span class="ln">100  </span></a>        <span class="s1">receiptIntent</span><span class="s2">.</span><span class="s1">putExtra</span><span class="s2">(</span><span class="s5">&quot;customerName&quot;</span><span class="s2">, </span><span class="s5">&quot;Nina Hana Chang&quot;</span><span class="s2">);</span>
+<a name="l101"><span class="ln">101  </span></a>        <span class="s1">receiptIntent</span><span class="s2">.</span><span class="s1">putExtra</span><span class="s2">(</span><span class="s5">&quot;customerPhone&quot;</span><span class="s2">, </span><span class="s5">&quot;09334678901&quot;</span><span class="s2">);</span>
+<a name="l102"><span class="ln">102  </span></a>        <span class="s1">receiptIntent</span><span class="s2">.</span><span class="s1">putExtra</span><span class="s2">(</span><span class="s5">&quot;customerAddress&quot;</span><span class="s2">, </span><span class="s5">&quot;Upper 3, Sta Monica, Penacincio, Calumpang, Antipolo City, Bayani&quot;</span><span class="s2">);</span>
+<a name="l103"><span class="ln">103  </span></a>
+<a name="l104"><span class="ln">104  </span></a>        <span class="s1">startActivity</span><span class="s2">(</span><span class="s1">receiptIntent</span><span class="s2">);</span>
+<a name="l105"><span class="ln">105  </span></a>        <span class="s1">Toast</span><span class="s2">.</span><span class="s1">makeText</span><span class="s2">(</span><span class="s0">this</span><span class="s2">,</span>
+<a name="l106"><span class="ln">106  </span></a>                <span class="s1">String</span><span class="s2">.</span><span class="s1">format</span><span class="s2">(</span><span class="s5">&quot;Order placed for %d items! Total: P%d&quot;</span><span class="s2">, </span><span class="s1">quantity</span><span class="s2">, </span><span class="s1">calculateTotalPrice</span><span class="s2">()),</span>
+<a name="l107"><span class="ln">107  </span></a>                <span class="s1">Toast</span><span class="s2">.</span><span class="s1">LENGTH_SHORT</span><span class="s2">).</span><span class="s1">show</span><span class="s2">();</span>
+<a name="l108"><span class="ln">108  </span></a>    <span class="s2">}</span>
+<a name="l109"><span class="ln">109  </span></a>
+<a name="l110"><span class="ln">110  </span></a>    <span class="s0">private int </span><span class="s1">calculateTotalPrice</span><span class="s2">() {</span>
+<a name="l111"><span class="ln">111  </span></a>        <span class="s0">return </span><span class="s2">(</span><span class="s1">PRODUCT_PRICE </span><span class="s2">* </span><span class="s1">quantity</span><span class="s2">) + </span><span class="s1">DELIVERY_FEE</span><span class="s2">;</span>
+<a name="l112"><span class="ln">112  </span></a>    <span class="s2">}</span>
+<a name="l113"><span class="ln">113  </span></a><span class="s2">}</span></pre>
+</body>
+</html>

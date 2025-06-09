@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ecommerce</string>
+    <string name="register_url">http://192.168.0.101/ecommerce/createAccount.php</string>
+    <string name="firebase_database_url">https://ecommerce-c4730-default-rtdb.firebaseio.com//</string>
+</resources>

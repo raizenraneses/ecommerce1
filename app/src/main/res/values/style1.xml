@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomStyle1">
+        <item name="android:textColor">@color/orange</item>
+    </style>
+    <color name="orange">#EF6F52</color>
+</resources>
