@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nina Hana Chang"
-                android:textColor="@color/fourth"
+                android:textColor="@color/blue"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
 
@@ -78,7 +78,7 @@
                         android:layout_alignParentBottom="true"
                         android:layout_margin="16dp"
                         android:text="BACON CHEESE"
-                        android:textColor="@color/third"
+                        android:textColor="@color/fourth"
                         android:textSize="24sp"
                         android:textStyle="bold"/>
                 </RelativeLayout>
@@ -141,7 +141,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Delivery Information"
-                    android:textColor="#333333"
+                    android:textColor="@color/blue"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="8dp"/>

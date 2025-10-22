@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="#FAFAF8">
+
+    <TextView
+        android:id="@+id/tvVerificationCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verification Code"
+        android:textSize="20sp"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/tvSubText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="We have sent the verification code to your phone"
+        android:textSize="14sp"
+        android:textColor="#888888"
+        android:layout_marginBottom="24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginBottom="24dp"
+        android:weightSum="6">
+
+        <EditText
+            android:id="@+id/etDigit1"
+            android:textColor="@color/black"
+            android:background="@drawable/border1"
+            style="@style/OtpDigitBox" />
+
+        <EditText
+            android:id="@+id/etDigit2"
+            android:textColor="@color/black"
+            android:background="@drawable/border1"
+            style="@style/OtpDigitBox" />
+
+        <EditText
+            android:id="@+id/etDigit3"
+            android:textColor="@color/black"
+            android:background="@drawable/border1"
+            style="@style/OtpDigitBox" />
+
+        <EditText
+            android:id="@+id/etDigit4"
+            android:textColor="@color/black"
+            android:background="@drawable/border1"
+            style="@style/OtpDigitBox" />
+
+        <EditText
+            android:id="@+id/etDigit5"
+            android:textColor="@color/black"
+            android:background="@drawable/border1"
+            style="@style/OtpDigitBox" />
+
+        <EditText
+            android:id="@+id/etDigit6"
+            android:textColor="@color/black"
+            android:background="@drawable/border1"
+            style="@style/OtpDigitBox" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tvBack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="Back"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:background="@drawable/button_outline"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/tvConfirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="Confirm"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:background="@drawable/rounded_button"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginStart="8dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

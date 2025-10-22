@@ -41,17 +41,16 @@ public class brgSupreme extends AppCompatActivity {
         cancelButton = findViewById(R.id.cancelButton);
         placeOrderButton = findViewById(R.id.placeOrderButton);
 
-        // Set initial values
+        // Set initial UI state
         updateQuantityDisplay();
         updatePriceDisplay();
 
-        // Set click listeners
+        // Set button click listeners
         decreaseButton.setOnClickListener(v -> decreaseQuantity());
-
         increaseButton.setOnClickListener(v -> increaseQuantity());
 
         cancelButton.setOnClickListener(v -> {
-            Toast.makeText(brgSupreme.this, "Order cancelled", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Order cancelled", Toast.LENGTH_SHORT).show();
             finish();
         });
 
@@ -89,9 +88,7 @@ public class brgSupreme extends AppCompatActivity {
     }
 
     private void placeOrder() {
-        Intent receiptIntent = new Intent(brgSupreme.this, receiptFileOne.class);
-
-        // Pass all necessary data to receipt
+        Intent receiptIntent = new Intent(this, receiptFileOne.class);
         receiptIntent.putExtra("productName", "Supreme");
         receiptIntent.putExtra("productDescription", "Smoky BBQ sauce, Crispy Bacon");
         receiptIntent.putExtra("quantity", quantity);
@@ -102,8 +99,10 @@ public class brgSupreme extends AppCompatActivity {
         receiptIntent.putExtra("customerAddress", "Upper 3, Sta Monica, Penacincio, Calumpang, Antipolo City, Bayani");
 
         startActivity(receiptIntent);
+
         Toast.makeText(this,
-                String.format("Order placed for %d items! Total: P%d", quantity, calculateTotalPrice()),
+                String.format("Order placed for %d item%s! Total: P%d",
+                        quantity, quantity > 1 ? "s" : "", calculateTotalPrice()),
                 Toast.LENGTH_SHORT).show();
     }
 

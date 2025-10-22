@@ -32,8 +32,8 @@ public class receiptFile extends AppCompatActivity {
         TextView deliveryFeeTextView = findViewById(R.id.deliveryFeeTextView);
         TextView totalPriceTextView = findViewById(R.id.totalPriceTextView);
         TextView deliveryTimeTextView = findViewById(R.id.deliveryTimeTextView);
-        Button trackOrderButton = findViewById(R.id.trackOrderButton);
-        Button backToHomeButton = findViewById(R.id.backToHomeButton);
+        TextView trackOrderButton = findViewById(R.id.trackOrderButton);
+        TextView backToHomeButton = findViewById(R.id.backToHomeButton);
 
         // Get data from intent with null checks
         Intent intent = getIntent();

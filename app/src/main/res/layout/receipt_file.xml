@@ -24,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ORDER RECEIPT"
-                android:textColor="@color/fourth"
+                android:textColor="@color/blue"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp"/>
@@ -146,7 +146,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Bacon Cheese Burger"
-                            android:textColor="#333333"
+                            android:textColor="@color/blue"
                             android:textSize="14sp"
                             android:textStyle="bold"/>
 
@@ -373,7 +373,7 @@
             android:orientation="vertical"
             android:layout_marginTop="16dp">
 
-            <Button
+            <TextView
                 android:id="@+id/trackOrderButton"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
@@ -382,9 +382,11 @@
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:layout_marginBottom="8dp"/>
+                android:gravity="center"
+                android:textAlignment="center"
+                android:layout_marginBottom="8dp" />
 
-            <Button
+            <TextView
                 android:id="@+id/backToHomeButton"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
@@ -392,7 +394,9 @@
                 android:text="BACK TO HOME"
                 android:textColor="@color/fourth"
                 android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textAlignment="center" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

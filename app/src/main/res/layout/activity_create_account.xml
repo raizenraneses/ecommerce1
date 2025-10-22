@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:text="Create Account"
-            android:textColor="@color/black"
+            android:textColor="@color/blue"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -49,6 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Full Name"
+                android:background="@drawable/border1"
                 android:inputType="textPersonName"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -67,6 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email Address"
+                android:background="@drawable/border1"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -85,6 +87,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Phone Number"
+                android:background="@drawable/border1"
                 android:inputType="phone"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -106,6 +109,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Password"
                 android:inputType="textPassword"
+                android:background="@drawable/border1"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -161,7 +165,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:text="Sign In"
-                android:textColor="@color/third"
+                android:textColor="@color/blue"
                 android:textStyle="bold"
                 android:clickable="true"
                 android:focusable="true" />

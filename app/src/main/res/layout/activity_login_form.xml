@@ -15,12 +15,7 @@
         android:layout_height="wrap_content"
         android:hint="Verification Code">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etVerificationCode"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:maxLength="6" />
+
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -42,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:text="Login to your account"
-        android:textColor="@color/black"
+        android:textColor="@color/blue"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -159,6 +154,17 @@
         android:gravity="center"
         android:text="Don't have an account?"
         android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/tvPhoneSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign-up using Phone number"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="10dp"
+        android:autoLink="none" />
 
     <!-- Sign Up as TextView styled like Button -->
     <TextView

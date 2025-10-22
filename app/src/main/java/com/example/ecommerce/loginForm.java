@@ -39,6 +39,13 @@ public class loginForm extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
+
+        TextView tvPhoneSignup = findViewById(R.id.tvPhoneSignup);
+        tvPhoneSignup.setOnClickListener(v -> {
+            Intent intent = new Intent(this, otpSignUp.class);
+            startActivity(intent);
+        });
+
     }
 
     private void attemptLogin() {
